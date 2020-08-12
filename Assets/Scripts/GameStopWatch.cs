@@ -21,6 +21,7 @@ public class GameStopWatch : MonoBehaviour
     {
         gameStopWatch = new Stopwatch();
         gameStopWatch.Reset();
+        gameStopWatch.Restart();
     }
 
     // Update is called once per frame

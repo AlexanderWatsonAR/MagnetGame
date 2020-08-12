@@ -6,7 +6,7 @@ using TMPro;
 public class BatteryManager : MonoBehaviour
 {
     [HideInInspector]
-    public static BatteryManager instance;
+    private static BatteryManager instance;
 
     private static TextMeshProUGUI text;
 
@@ -27,11 +27,23 @@ public class BatteryManager : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
+    public static float BatteryStatus
+    {
+        get { return batteryStatus; }
+        set
+        {
+            batteryStatus = value;
+            batteryStatus = batteryStatus >= 100.0f ? 100.0f : batteryStatus;
+            int roundedBatteryStatus = (int)batteryStatus;
+            text.text = roundedBatteryStatus.ToString() + "%";
+        }
+    }
+
     void Start()
     {
         instance = this;
         text = GetComponent<TextMeshProUGUI>();
+        batteryStatus = 100;
     }
 
     public IEnumerator UpdateBatteryStatus()
@@ -40,10 +52,19 @@ public class BatteryManager : MonoBehaviour
         {
             batteryStatus -= consumptionRate;
             if (batteryStatus <= 0.0f)
+            {
                 IsMagnetActive = false;
+                StartCoroutine(EndScene());
+            }
             int roundedBatteryStatus = (int)batteryStatus;
             text.text = roundedBatteryStatus.ToString() + "%";
             yield return new WaitForSeconds(0.5f);
         }
+    }
+
+    public IEnumerator EndScene()
+    {
+        yield return new WaitForSeconds(3);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("EndScene", UnityEngine.SceneManagement.LoadSceneMode.Single);
     }
 }

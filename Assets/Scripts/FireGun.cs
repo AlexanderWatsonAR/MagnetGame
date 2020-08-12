@@ -31,12 +31,21 @@ public class FireGun : MonoBehaviour
                 int index = Random.Range(0, projectiles.Length);
 
                 GameObject shot = Instantiate(projectiles[index].prefab);
-                shot.GetComponent<Rigidbody>().mass = projectiles[index].mass;
+                
                 shot.tag = "Metallic";
                 shot.transform.localScale = projectiles[index].localScale;
                 shot.transform.position = transform.position + projectiles[index].localPosition;
                 shot.SetActive(true);
-                shot.GetComponent<Rigidbody>().velocity = new Vector3(transform.forward.x * projectiles[index].speed, transform.forward.y * projectiles[index].speed, transform.forward.z * projectiles[index].speed);
+                if (shot.GetComponent<Rigidbody>())
+                {
+                    shot.GetComponent<Rigidbody>().mass = projectiles[index].mass;
+                    shot.GetComponent<Rigidbody>().velocity = new Vector3(transform.forward.x * projectiles[index].speed, transform.forward.y * projectiles[index].speed, transform.forward.z * projectiles[index].speed);
+                    shot.AddComponent<CollectableProperties>();
+                    shot.GetComponent<CollectableProperties>().score = projectiles[index].score;
+                    shot.GetComponent<CollectableProperties>().charge = projectiles[index].charge;
+                    shot.GetComponent<CollectableProperties>().isDiamagnetic = projectiles[index].isDiamagnetic;
+                    shot.GetComponent<CollectableProperties>().isMagnetic = projectiles[index].isMagnetic;
+                }
                 yield return new WaitForSeconds(Interval);
             }
         }

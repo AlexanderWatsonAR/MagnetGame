@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2391896bbb693a458ca02df868eda52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  consumptionRate: 0.2
+  consumptionRate: 1
 --- !u!1 &148688145
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,15 +479,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 508de904960ff934691ded5e99e6dfbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Interval: 2.5
+  Interval: 5
   projectiles:
-  - prefab: {fileID: 4531376371359190490, guid: 730d9e00cdc1ce94e9ed4caa33fdbf65,
-      type: 3}
+  - prefab: {fileID: 504927420287699891, guid: aa205a2d8e96f0648836426f8eb32180, type: 3}
     mass: 1
     speed: 1.5
     localScale: {x: 0.5, y: 0.5, z: 0.5}
     localPosition: {x: 0, y: 0, z: 0}
-    Score: 1
+    score: 4
+    charge: 3
+    isDiamagnetic: 0
+    isMagnetic: 1
   FirstShotInSeconds: 3
   hasShootingStarted: 0
   fireModeActive: 1
@@ -1059,6 +1061,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1141,6 +1144,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9095b331e35ece47aa38f5f976b00bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f7b510f5893be142a104d5069c14ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1222072492
@@ -1309,11 +1324,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xSpeed: 0
   ySpeed: 0
-  zSpeed: 20
+  zSpeed: 10
   xRandomSpeedRange: {x: 0, y: 0}
   yRandomSpeedRange: {x: 0, y: 0}
   zRandomSpeedRange: {x: 0, y: 0}
+  maxXSpeed: 0
+  maxYSpeed: 0
+  maxZSpeed: 1
   isRotateSpeedRandom: 0
+  interval: 2
 --- !u!65 &1702861237
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1433,7 +1452,10 @@ MonoBehaviour:
     speed: 2
     localScale: {x: 0.5, y: 0.5, z: 0.5}
     localPosition: {x: 0, y: 0, z: 0}
-    Score: 1
+    score: 2
+    charge: 0
+    isDiamagnetic: 0
+    isMagnetic: 1
   FirstShotInSeconds: 3
   hasShootingStarted: 0
   fireModeActive: 1

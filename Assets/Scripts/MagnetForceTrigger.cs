@@ -12,9 +12,18 @@ public class MagnetForceTrigger : MonoBehaviour
     {
         if (other.tag == "Metallic" && BatteryManager.IsMagnetActive)
         {
+            if (!other.gameObject.GetComponent<CollectableProperties>().isMagnetic)
+                return;
+
+            if (other.gameObject.GetComponent<CollectableProperties>().isDiamagnetic)
+                strength = -strength;
+
             Vector3 direction = Vector3.Normalize(transform.position - other.transform.position);
             if(other.attachedRigidbody != null)
                 other.attachedRigidbody.AddForce(direction * (strength));
+
+            if (strength < 0)
+                strength *= -1;
         }
     }
 

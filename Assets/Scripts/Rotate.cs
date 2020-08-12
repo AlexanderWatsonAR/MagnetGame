@@ -12,7 +12,13 @@ public class Rotate : MonoBehaviour
     public Vector2 yRandomSpeedRange;
     public Vector2 zRandomSpeedRange;
 
+    public float maxXSpeed;
+    public float maxYSpeed;
+    public float maxZSpeed;
+
     public bool isRotateSpeedRandom = false;
+
+    public int interval = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +34,8 @@ public class Rotate : MonoBehaviour
         xSpeed *= Time.deltaTime;
         ySpeed *= Time.deltaTime;
         zSpeed *= Time.deltaTime;
+
+        StartCoroutine(IncreaseRotationalSpeed());
     }
 
     // Update is called once per frame
@@ -38,15 +46,19 @@ public class Rotate : MonoBehaviour
         //    return;
         //}
 
-        if (GameStopWatch.TimeElapsedInSeconds > 1 && GameStopWatch.TimeElapsedInSeconds % 30 == 0)
+        ModifyRotation();
+        transform.Rotate(xSpeed, ySpeed, zSpeed);
+    }
+
+    private IEnumerator IncreaseRotationalSpeed()
+    {
+        while (zSpeed <= maxZSpeed)
         {
+            yield return new WaitForSeconds(interval);
             xSpeed *= 1.1f;
             ySpeed *= 1.1f;
             zSpeed *= 1.1f;
         }
-
-        ModifyRotation();
-        transform.Rotate(xSpeed, ySpeed, zSpeed);
     }
 
     protected virtual void ModifyRotation()
