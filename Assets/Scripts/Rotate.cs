@@ -58,6 +58,11 @@ public class Rotate : MonoBehaviour
             xSpeed *= 1.1f;
             ySpeed *= 1.1f;
             zSpeed *= 1.1f;
+
+            if(tag == "Player")
+            {
+                Camera.main.fieldOfView += 0.5f;
+            }
         }
     }
 

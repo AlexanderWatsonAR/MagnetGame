@@ -11,7 +11,11 @@ public class BatteryManager : MonoBehaviour
     private static TextMeshProUGUI text;
 
     private static float batteryStatus = 100.0f;
+
     public float consumptionRate = 10f;
+
+    public GameObject BatteryImage;
+    private RectTransform batteryImageRect;
 
     private static bool isMagnetActive = false;
 
@@ -36,6 +40,7 @@ public class BatteryManager : MonoBehaviour
             batteryStatus = batteryStatus >= 100.0f ? 100.0f : batteryStatus;
             int roundedBatteryStatus = (int)batteryStatus;
             text.text = roundedBatteryStatus.ToString() + "%";
+            //batteryImageRect.rect.Set(batteryImageRect.rect.x, batteryImageRect.rect.y, batteryImageRect.rect.height, roundedBatteryStatus * 2);
         }
     }
 
@@ -44,6 +49,7 @@ public class BatteryManager : MonoBehaviour
         instance = this;
         text = GetComponent<TextMeshProUGUI>();
         batteryStatus = 100;
+        batteryImageRect = BatteryImage.GetComponent<RectTransform>();
     }
 
     public IEnumerator UpdateBatteryStatus()
@@ -51,6 +57,7 @@ public class BatteryManager : MonoBehaviour
         while (isMagnetActive)
         {
             batteryStatus -= consumptionRate;
+           
             if (batteryStatus <= 0.0f)
             {
                 IsMagnetActive = false;
@@ -58,6 +65,8 @@ public class BatteryManager : MonoBehaviour
             }
             int roundedBatteryStatus = (int)batteryStatus;
             text.text = roundedBatteryStatus.ToString() + "%";
+            batteryImageRect.sizeDelta = new Vector2(roundedBatteryStatus * 2, batteryImageRect.sizeDelta.y);
+            //batteryImageRect.
             yield return new WaitForSeconds(0.5f);
         }
     }

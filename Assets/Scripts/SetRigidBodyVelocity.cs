@@ -18,5 +18,7 @@ public class SetRigidBodyVelocity : MonoBehaviour
         Transform gun = GameObject.Find("Gun 1").transform;
 
         GetComponent<Rigidbody>().velocity = new Vector3(gun.forward.x * speed, gun.forward.y * speed, gun.forward.z * speed);
+        speed /= 3;
+        GetComponent<ConstantForce>().force = new Vector3(gun.forward.x * speed, gun.forward.y * speed, gun.forward.z * speed);
     }
 }
