@@ -16,9 +16,13 @@ public class Rotate : MonoBehaviour
     public float maxYSpeed;
     public float maxZSpeed;
 
+    public string axis;
+
     public bool isRotateSpeedRandom = false;
 
     public int interval = 10;
+
+    private bool isRotatingPaused = false;
 
     // Start is called before the first frame update
     void Start()
@@ -46,24 +50,73 @@ public class Rotate : MonoBehaviour
         //    return;
         //}
 
+        if (isRotatingPaused)
+            return;
+
         ModifyRotation();
         transform.Rotate(xSpeed, ySpeed, zSpeed);
     }
 
     private IEnumerator IncreaseRotationalSpeed()
     {
-        while (zSpeed <= maxZSpeed)
+        float speed = 0;
+        float maxSpeed = 0;
+
+        switch (axis)
+        {
+            case "x":
+                speed = xSpeed;
+                maxSpeed = maxXSpeed;
+                break;
+            case "y":
+                speed = ySpeed;
+                maxSpeed = maxYSpeed;
+                break;
+            case "z":
+                speed = zSpeed;
+                maxSpeed = maxZSpeed;
+                break;
+        }
+
+        while (speed <= maxSpeed)
         {
             yield return new WaitForSeconds(interval);
             xSpeed *= 1.1f;
             ySpeed *= 1.1f;
             zSpeed *= 1.1f;
 
-            if(tag == "Player")
+            switch (axis)
+            {
+                case "x":
+                    speed = xSpeed;
+                    maxSpeed = maxXSpeed;
+                    break;
+                case "y":
+                    speed = ySpeed;
+                    maxSpeed = maxYSpeed;
+                    break;
+                case "z":
+                    speed = zSpeed;
+                    maxSpeed = maxZSpeed;
+                    break;
+            }
+
+
+            if (tag == "Player")
             {
                 Camera.main.fieldOfView += 0.5f;
             }
         }
+    }
+
+    public void PauseRotating()
+    {
+        isRotatingPaused = true;
+    }
+
+    public void ResumeRotating()
+    {
+        isRotatingPaused = false;
     }
 
     protected virtual void ModifyRotation()

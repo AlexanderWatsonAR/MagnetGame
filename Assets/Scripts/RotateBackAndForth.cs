@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RotateBackAndForth : Rotate
 {
-    public string axis;
     public float MaxRotation;
 
     // Flips rotation speed.

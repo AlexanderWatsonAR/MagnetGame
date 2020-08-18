@@ -17,7 +17,7 @@ public class BatteryManager : MonoBehaviour
     public GameObject BatteryImage;
     private RectTransform batteryImageRect;
 
-    private static bool isMagnetActive = false;
+    private static bool isMagnetActive = true;
 
     public static bool IsMagnetActive
     {
