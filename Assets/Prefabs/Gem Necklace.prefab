@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  charge: 2
+  charge: 0
   isDiamagnetic: 0
   isMagnetic: 1
 --- !u!1 &535394608206383668
@@ -325,7 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  charge: 2
+  charge: 0
   isDiamagnetic: 0
   isMagnetic: 1
 --- !u!1 &965135336654438391
@@ -489,7 +489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  charge: 2
+  charge: 0
   isDiamagnetic: 0
   isMagnetic: 1
 --- !u!1 &1288788298798838534
@@ -653,7 +653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  charge: 2
+  charge: 0
   isDiamagnetic: 0
   isMagnetic: 1
 --- !u!1 &1686693615402757165
@@ -817,7 +817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  charge: 2
+  charge: 0
   isDiamagnetic: 0
   isMagnetic: 1
 --- !u!1 &3258616732851532895
@@ -1181,7 +1181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  charge: 2
+  charge: 0
   isDiamagnetic: 0
   isMagnetic: 1
 --- !u!1 &4058090516382229410
@@ -1345,7 +1345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  charge: 2
+  charge: 0
   isDiamagnetic: 0
   isMagnetic: 1
 --- !u!1 &4124788395692008565
@@ -1509,7 +1509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  charge: 2
+  charge: 0
   isDiamagnetic: 0
   isMagnetic: 1
 --- !u!1 &4869210419677412915
@@ -1837,7 +1837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  charge: 2
+  charge: 0
   isDiamagnetic: 0
   isMagnetic: 1
 --- !u!1 &5038740716419731565
@@ -2001,7 +2001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  charge: 2
+  charge: 0
   isDiamagnetic: 0
   isMagnetic: 1
 --- !u!1 &5497524385514276431
@@ -2201,7 +2201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  charge: 2
+  charge: 0
   isDiamagnetic: 0
   isMagnetic: 1
 --- !u!1 &5531558906780239760
@@ -2365,7 +2365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  charge: 2
+  charge: 0
   isDiamagnetic: 0
   isMagnetic: 1
 --- !u!1 &5878219860807672723
@@ -2529,7 +2529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  charge: 2
+  charge: 0
   isDiamagnetic: 0
   isMagnetic: 1
 --- !u!1 &5915953741766008808
@@ -2756,7 +2756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  charge: 2
+  charge: 0
   isDiamagnetic: 0
   isMagnetic: 1
 --- !u!1 &7175431024875438175
@@ -2920,7 +2920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  charge: 2
+  charge: 0
   isDiamagnetic: 0
   isMagnetic: 1
 --- !u!1 &7547794060285235414
@@ -3084,7 +3084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  charge: 2
+  charge: 0
   isDiamagnetic: 0
   isMagnetic: 1
 --- !u!1 &8301985024833833541
@@ -3248,7 +3248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  charge: 2
+  charge: 0
   isDiamagnetic: 0
   isMagnetic: 1
 --- !u!1 &9032468865221323083

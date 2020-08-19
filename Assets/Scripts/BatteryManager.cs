@@ -17,6 +17,9 @@ public class BatteryManager : MonoBehaviour
     public GameObject BatteryImage;
     private RectTransform batteryImageRect;
 
+    private Color green = new Color(0.08741736f, 1.0f, 0.0f);
+    private Color red = new Color(1.0f, 0.1084906f, 0.1336466f);
+
     private static bool isMagnetActive = true;
 
     public static bool IsMagnetActive
@@ -40,7 +43,6 @@ public class BatteryManager : MonoBehaviour
             batteryStatus = batteryStatus >= 100.0f ? 100.0f : batteryStatus;
             int roundedBatteryStatus = (int)batteryStatus;
             text.text = roundedBatteryStatus.ToString() + "%";
-            //batteryImageRect.rect.Set(batteryImageRect.rect.x, batteryImageRect.rect.y, batteryImageRect.rect.height, roundedBatteryStatus * 2);
         }
     }
 
@@ -50,6 +52,7 @@ public class BatteryManager : MonoBehaviour
         text = GetComponent<TextMeshProUGUI>();
         batteryStatus = 100;
         batteryImageRect = BatteryImage.GetComponent<RectTransform>();
+        IsMagnetActive = true;
     }
 
     public IEnumerator UpdateBatteryStatus()
@@ -63,10 +66,17 @@ public class BatteryManager : MonoBehaviour
                 IsMagnetActive = false;
                 StartCoroutine(EndScene());
             }
+            if(batteryStatus <= 15.0f)
+            {
+                BatteryImage.GetComponent<UnityEngine.UI.Image>().color = red;
+            }
+            else
+            {
+                BatteryImage.GetComponent<UnityEngine.UI.Image>().color = green;
+            }
             int roundedBatteryStatus = (int)batteryStatus;
             text.text = roundedBatteryStatus.ToString() + "%";
             batteryImageRect.sizeDelta = new Vector2(roundedBatteryStatus * 2, batteryImageRect.sizeDelta.y);
-            //batteryImageRect.
             yield return new WaitForSeconds(0.5f);
         }
     }

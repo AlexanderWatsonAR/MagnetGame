@@ -100,12 +100,6 @@ public class Rotate : MonoBehaviour
                     maxSpeed = maxZSpeed;
                     break;
             }
-
-
-            if (tag == "Player")
-            {
-                Camera.main.fieldOfView += 0.5f;
-            }
         }
     }
 
