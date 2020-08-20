@@ -35,7 +35,7 @@ public class FireGun : MonoBehaviour
                 shot.tag = "Metallic";
                 shot.transform.localScale = projectiles[index].localScale;
                 shot.transform.position = transform.position + projectiles[index].localPosition;
-                shot.SetActive(true);
+
                 if (shot.GetComponent<Rigidbody>())
                 {
                     shot.GetComponent<Rigidbody>().mass = projectiles[index].mass;
@@ -47,6 +47,20 @@ public class FireGun : MonoBehaviour
                     shot.GetComponent<CollectableProperties>().isDiamagnetic = projectiles[index].isDiamagnetic;
                     shot.GetComponent<CollectableProperties>().isMagnetic = projectiles[index].isMagnetic;
                 }
+                else
+                {
+                    Transform child = shot.transform.GetChild(0);
+                    int itr = 0;
+                    while (child.gameObject.GetComponent<SetRigidBodyVelocity>() == null)
+                    {
+                        itr++;
+                        child = shot.transform.GetChild(itr);
+                    }
+                    child.gameObject.GetComponent<SetRigidBodyVelocity>().parent = transform;
+                }
+
+                shot.SetActive(true);
+
                 yield return new WaitForSeconds(Interval);
             }
         }

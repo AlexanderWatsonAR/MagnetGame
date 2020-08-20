@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SetRigidBodyVelocity : MonoBehaviour
 {
+    public Transform parent;
     public float speed = 15.5f;
 
     // Start is called before the first frame update
@@ -15,10 +16,12 @@ public class SetRigidBodyVelocity : MonoBehaviour
         //    parent = parent.parent;
         //}
 
-        Transform gun = GameObject.Find("Gun 1").transform;
+        //Transform gun = GameObject.Find("Gun 1").transform;
 
-        GetComponent<Rigidbody>().velocity = new Vector3(gun.forward.x * speed, gun.forward.y * speed, gun.forward.z * speed);
+        GetComponent<Rigidbody>().velocity = new Vector3(parent.forward.x * speed, parent.forward.y * speed, parent.forward.z * speed);
+
         speed /= 3;
-        GetComponent<ConstantForce>().force = new Vector3(gun.forward.x * speed, gun.forward.y * speed, gun.forward.z * speed);
+        if(GetComponent<ConstantForce>() != null)
+            GetComponent<ConstantForce>().force = new Vector3(parent.forward.x * speed, parent.forward.y * speed, parent.forward.z * speed);
     }
 }
