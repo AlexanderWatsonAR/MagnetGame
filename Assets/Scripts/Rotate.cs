@@ -35,9 +35,9 @@ public class Rotate : MonoBehaviour
             zSpeed = Random.Range(zRandomSpeedRange.x, zRandomSpeedRange.y);
         }
 
-        xSpeed *= Time.deltaTime;
-        ySpeed *= Time.deltaTime;
-        zSpeed *= Time.deltaTime;
+        //xSpeed *= Time.deltaTime;
+        //ySpeed *= Time.deltaTime;
+        //zSpeed *= Time.deltaTime;
 
         StartCoroutine(IncreaseRotationalSpeed());
     }
@@ -54,7 +54,7 @@ public class Rotate : MonoBehaviour
             return;
 
         ModifyRotation();
-        transform.Rotate(xSpeed, ySpeed, zSpeed);
+        transform.Rotate(xSpeed * Time.deltaTime, ySpeed * Time.deltaTime, zSpeed * Time.deltaTime);
     }
 
     private IEnumerator IncreaseRotationalSpeed()

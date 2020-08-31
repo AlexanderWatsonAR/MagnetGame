@@ -35,6 +35,7 @@ public class FireGun : MonoBehaviour
                 shot.tag = "Metallic";
                 shot.transform.localScale = projectiles[index].localScale;
                 shot.transform.position = transform.position + projectiles[index].localPosition;
+                shot.transform.eulerAngles = projectiles[index].localRotation;
 
                 if (shot.GetComponent<Rigidbody>())
                 {
