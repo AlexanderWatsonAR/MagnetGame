@@ -344,7 +344,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 702da26ea6ad72144b750b60cd3919f0, type: 2}
+      objectReference: {fileID: 2100000, guid: 7e7b3d1272e355841b48dfa99a81b2a2, type: 2}
     - target: {fileID: -4216859302048453862, guid: 58d99124c8119d54193d74ce150a649d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -424,7 +424,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 3f4ab8a9a7f73d742a21667d9692a965, type: 2}
+      objectReference: {fileID: 2100000, guid: d29c7f1b254153842a14138ac1ae5e3e, type: 2}
     - target: {fileID: 6287037274593505867, guid: 58d99124c8119d54193d74ce150a649d,
         type: 3}
       propertyPath: m_Enabled
@@ -1413,7 +1413,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cfb8f90fd7d7b3a459b1ef8ba131ad4d, type: 2}
+  - {fileID: 2100000, guid: 9d6058902015bee488f1b0da610554e8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2878,7 +2878,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 631ff3fd199dc2d45bc575aaa850e39c, type: 2}
+      objectReference: {fileID: 2100000, guid: fcd746e3055eedb4c9c826e3974a3981, type: 2}
     - target: {fileID: -4216859302048453862, guid: 7c5e6a0b0a76d0c49b6a394f859ce14d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2953,7 +2953,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 702da26ea6ad72144b750b60cd3919f0, type: 2}
+      objectReference: {fileID: 2100000, guid: 7e7b3d1272e355841b48dfa99a81b2a2, type: 2}
     - target: {fileID: -927199367670048503, guid: 7c5e6a0b0a76d0c49b6a394f859ce14d,
         type: 3}
       propertyPath: m_Name
@@ -2968,9 +2968,63 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 631ff3fd199dc2d45bc575aaa850e39c, type: 2}
+      objectReference: {fileID: 2100000, guid: fcd746e3055eedb4c9c826e3974a3981, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c5e6a0b0a76d0c49b6a394f859ce14d, type: 3}
+--- !u!1 &1376457506 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6977784734388325941, guid: 7c5e6a0b0a76d0c49b6a394f859ce14d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1376457503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1376457507 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5976458888340079647, guid: 7c5e6a0b0a76d0c49b6a394f859ce14d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1376457503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1376457508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376457506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b655141f8986854ab068eab630905d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
+  instanceMaterial: 1
+  meshCenter: {x: 0, y: 0, z: 0}
+  maxLights: 1
+  raycast: 1
+  raycastMask:
+    serializedVersion: 2
+    m_Bits: 0
+  raycastFadeSpeed: 10
+--- !u!114 &1376457509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376457507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b655141f8986854ab068eab630905d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
+  instanceMaterial: 1
+  meshCenter: {x: 0, y: 0, z: 0}
+  maxLights: 1
+  raycast: 1
+  raycastMask:
+    serializedVersion: 2
+    m_Bits: 0
+  raycastFadeSpeed: 10
 --- !u!1 &1378284088
 GameObject:
   m_ObjectHideFlags: 0
