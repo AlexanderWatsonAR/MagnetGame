@@ -40,7 +40,7 @@
             "typeInfo": {
                 "fullName": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty"
             },
-            "JSONnodeData": "{\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"fd687224-d084-48f4-a3d0-809d1d499e85\"\n    },\n    \"m_Name\": \"Rim\",\n    \"m_DefaultReferenceName\": \"Vector1_1F08E211\",\n    \"m_OverrideReferenceName\": \"\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Precision\": 0,\n    \"m_GPUInstanced\": false,\n    \"m_Hidden\": false,\n    \"m_Value\": 3.0,\n    \"m_FloatType\": 1,\n    \"m_RangeValues\": {\n        \"x\": 1.0,\n        \"y\": 5.0\n    }\n}"
+            "JSONnodeData": "{\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"fd687224-d084-48f4-a3d0-809d1d499e85\"\n    },\n    \"m_Name\": \"Rim\",\n    \"m_DefaultReferenceName\": \"Vector1_1F08E211\",\n    \"m_OverrideReferenceName\": \"\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Precision\": 0,\n    \"m_GPUInstanced\": false,\n    \"m_Hidden\": false,\n    \"m_Value\": 3.0,\n    \"m_FloatType\": 1,\n    \"m_RangeValues\": {\n        \"x\": 0.0,\n        \"y\": 10.0\n    }\n}"
         },
         {
             "typeInfo": {

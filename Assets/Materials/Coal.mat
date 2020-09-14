@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Black
+  m_Name: Coal
   m_Shader: {fileID: -6465566751694194690, guid: e93a0ca78059fb14cb7ee21ac8fff077,
     type: 3}
   m_ShaderKeywords: 
@@ -65,8 +65,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_1F08E211: 3
-    - Vector1_4DED3BAD: 0.8
+    - Vector1_1F08E211: 0.65
+    - Vector1_4DED3BAD: 2
     - Vector1_62654105: 0.5
     - Vector1_CA447CA9: 1
     - _AlphaClip: 0
