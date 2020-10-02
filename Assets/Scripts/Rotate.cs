@@ -39,7 +39,7 @@ public class Rotate : MonoBehaviour
         //ySpeed *= Time.deltaTime;
         //zSpeed *= Time.deltaTime;
 
-        StartCoroutine(IncreaseRotationalSpeed());
+        //StartCoroutine(IncreaseRotationalSpeed());
     }
 
     // Update is called once per frame
