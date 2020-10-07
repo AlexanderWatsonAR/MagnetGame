@@ -1,7 +1,7 @@
 # MagnetGame
 Magnet game for mobile
 
-##Game name tbd
+## Game name tbd
 
 ![Other](https://github.com/AlexanderWatsonAR/MagnetGame/blob/master/Other/electromagnet.gif)
 
