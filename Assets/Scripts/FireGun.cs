@@ -50,14 +50,14 @@ public class FireGun : MonoBehaviour
                 }
                 else
                 {
-                    Transform child = shot.transform.GetChild(0);
-                    int itr = 0;
-                    while (child.gameObject.GetComponent<SetRigidBodyVelocity>() == null)
-                    {
-                        itr++;
-                        child = shot.transform.GetChild(itr);
-                    }
-                    child.gameObject.GetComponent<SetRigidBodyVelocity>().parent = transform;
+                    //Transform child = shot.transform.GetChild(0);
+                    //int itr = 0;
+                    //while (child.gameObject.GetComponent<SetRigidBodyVelocity>() == null)
+                    //{
+                    //    itr++;
+                    //    child = shot.transform.GetChild(itr);
+                    //}
+                    //child.gameObject.GetComponent<SetRigidBodyVelocity>().parent = transform;
                 }
 
                 shot.SetActive(true);
