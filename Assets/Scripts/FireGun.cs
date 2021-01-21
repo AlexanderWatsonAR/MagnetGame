@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FireGun : MonoBehaviour
 {
+    public bool randomizeInterval;
     public float Interval;
     public Projectile[] projectiles;
     public float FirstShotInSeconds;
@@ -37,11 +38,12 @@ public class FireGun : MonoBehaviour
                 shot.transform.position = transform.position + projectiles[index].localPosition;
                 shot.transform.eulerAngles = projectiles[index].localRotation;
 
-                if (shot.GetComponent<Rigidbody>())
+                if (shot.GetComponent<Rigidbody>() != null)
                 {
                     shot.GetComponent<Rigidbody>().mass = projectiles[index].mass;
                     //shot.GetComponent<Rigidbody>().angularVelocity
-                    shot.GetComponent<Rigidbody>().velocity = new Vector3(transform.forward.x * projectiles[index].speed, transform.forward.y * projectiles[index].speed, transform.forward.z * projectiles[index].speed);
+                    shot.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    //shot.GetComponent<Rigidbody>().velocity = new Vector3(transform.forward.x * projectiles[index].speed, transform.forward.y * projectiles[index].speed, transform.forward.z * projectiles[index].speed);
                     shot.AddComponent<CollectableProperties>();
                     shot.GetComponent<CollectableProperties>().score = projectiles[index].score;
                     shot.GetComponent<CollectableProperties>().charge = projectiles[index].charge;
@@ -62,7 +64,11 @@ public class FireGun : MonoBehaviour
 
                 shot.SetActive(true);
 
-                yield return new WaitForSeconds(Interval);
+                float tempInterval = Interval;
+                if (randomizeInterval)
+                    tempInterval = Random.Range(Interval / 2, Interval);
+
+                yield return new WaitForSeconds(tempInterval);
             }
         }
     }

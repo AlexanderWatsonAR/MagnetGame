@@ -34,12 +34,6 @@ public class Rotate : MonoBehaviour
             ySpeed = Random.Range(yRandomSpeedRange.x, yRandomSpeedRange.y);
             zSpeed = Random.Range(zRandomSpeedRange.x, zRandomSpeedRange.y);
         }
-
-        //xSpeed *= Time.deltaTime;
-        //ySpeed *= Time.deltaTime;
-        //zSpeed *= Time.deltaTime;
-
-        //StartCoroutine(IncreaseRotationalSpeed());
     }
 
     // Update is called once per frame
@@ -55,52 +49,6 @@ public class Rotate : MonoBehaviour
 
         ModifyRotation();
         transform.Rotate(xSpeed * Time.deltaTime, ySpeed * Time.deltaTime, zSpeed * Time.deltaTime);
-    }
-
-    private IEnumerator IncreaseRotationalSpeed()
-    {
-        float speed = 0;
-        float maxSpeed = 0;
-
-        switch (axis)
-        {
-            case "x":
-                speed = xSpeed;
-                maxSpeed = maxXSpeed;
-                break;
-            case "y":
-                speed = ySpeed;
-                maxSpeed = maxYSpeed;
-                break;
-            case "z":
-                speed = zSpeed;
-                maxSpeed = maxZSpeed;
-                break;
-        }
-
-        while (speed <= maxSpeed)
-        {
-            yield return new WaitForSeconds(interval);
-            xSpeed *= 1.1f;
-            ySpeed *= 1.1f;
-            zSpeed *= 1.1f;
-
-            switch (axis)
-            {
-                case "x":
-                    speed = xSpeed;
-                    maxSpeed = maxXSpeed;
-                    break;
-                case "y":
-                    speed = ySpeed;
-                    maxSpeed = maxYSpeed;
-                    break;
-                case "z":
-                    speed = zSpeed;
-                    maxSpeed = maxZSpeed;
-                    break;
-            }
-        }
     }
 
     public void PauseRotating()

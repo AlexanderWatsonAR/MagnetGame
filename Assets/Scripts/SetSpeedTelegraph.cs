@@ -54,7 +54,7 @@ public class SetSpeedTelegraph : MonoBehaviour
                 go.GetComponent<Renderer>().material = greyParticle;
 
             objects[(int)currentSpeed].GetComponent<Renderer>().material = whiteParticle;
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Rotate>().ySpeed = targetRotationalSpeeds[(int)currentSpeed];
+            GameObject.FindGameObjectWithTag("Spinning").GetComponent<Rotate>().ySpeed = targetRotationalSpeeds[(int)currentSpeed];
         }
         else
         {

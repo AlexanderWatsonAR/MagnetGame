@@ -12,7 +12,7 @@ public class BatteryManager : MonoBehaviour
 
     private static float batteryStatus = 100.0f;
 
-    public float consumptionRate = 10f;
+    public float consumptionRate = 1f;
 
     public GameObject BatteryImage;
     private RectTransform batteryImageRect;
