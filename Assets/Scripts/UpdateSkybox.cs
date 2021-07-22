@@ -45,7 +45,7 @@ public class UpdateSkybox : MonoBehaviour
             step = -step;
         }
 
-        exposure += step;
+        exposure += step * Time.smoothDeltaTime;
 
         RenderSettings.skybox.SetFloat("_Exposure", exposure);
     }
@@ -59,7 +59,7 @@ public class UpdateSkybox : MonoBehaviour
             redStep = -redStep;
         }
 
-        skyBoxColor.r += redStep;
+        skyBoxColor.r += redStep * Time.smoothDeltaTime;
 
         RenderSettings.skybox.SetColor("_Tint", skyBoxColor);
     }
@@ -78,14 +78,14 @@ public class UpdateSkybox : MonoBehaviour
         {
             if (RenderSettings.fogDensity < 0.06f)
             {
-                RenderSettings.fogDensity += fogStep;
+                RenderSettings.fogDensity += fogStep * Time.smoothDeltaTime;
             }
         }
         else
         {
             if (RenderSettings.fogDensity > 0.0f)
             {
-                RenderSettings.fogDensity -= fogStep;
+                RenderSettings.fogDensity -= fogStep * Time.smoothDeltaTime;
             }
         }
     }

@@ -72,9 +72,11 @@ Material:
     - _AdvancedLighting: 1
     - _AlphaClip: 0
     - _AlphaToCoverage: 0
+    - _AngleFading: 0
     - _BendFlattenStrength: 1
     - _BendMode: 0
     - _BendPushStrength: 1
+    - _Billboard: 0
     - _Blend: 0
     - _BumpScale: 1
     - _ColorMapHeight: 0
@@ -92,6 +94,8 @@ Material:
     - _PerspectiveCorrection: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _Scalemap: 0
+    - _ShadowBiasCorrection: 0
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularAmount: 0.1
@@ -118,5 +122,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FadeParams: {r: 50, g: 100, b: 0, a: 0}
     - _HueVariation: {r: 1, g: 0.63, b: 0, a: 0.15}
+    - _ScalemapInfluence: {r: 0, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _WindDirection: {r: 1, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []

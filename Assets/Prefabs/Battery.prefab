@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4023507486793345396}
   - component: {fileID: 7062606251086409700}
   - component: {fileID: 7399611331416405426}
-  - component: {fileID: 1215589594439691566}
   - component: {fileID: 6577222608948073909}
   - component: {fileID: 8506363513325523883}
   - component: {fileID: 8523341193177727887}
+  - component: {fileID: 1215589594439691566}
   m_Layer: 0
   m_Name: Connector 2
   m_TagString: Untagged
@@ -29,13 +29,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768481907250727963}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
   m_LocalPosition: {x: -0.35, y: 1.5999999, z: 0}
-  m_LocalScale: {x: 20.006268, y: 20.006268, z: 20.006268}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
   m_Father: {fileID: 565639063657078078}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
 --- !u!33 &7062606251086409700
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -85,22 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1215589594439691566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 768481907250727963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c13111a3da3254d49b4290af6d85c628, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: 0
-  charge: 0
-  isDiamagnetic: 0
-  isMagnetic: 0
 --- !u!65 &6577222608948073909
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -122,7 +106,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768481907250727963}
   serializedVersion: 2
-  m_Mass: 0.08
+  m_Mass: 0.1
   m_Drag: 0
   m_AngularDrag: 0.01
   m_UseGravity: 1
@@ -145,6 +129,26 @@ FixedJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &1215589594439691566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768481907250727963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c13111a3da3254d49b4290af6d85c628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldQuantity: 0.15
+  silverQuantity: 0
+  copperQuantity: 0
+  emeraldQuantity: 0
+  diamondQuality: 0
+  charge: 0
+  isDiamagnetic: 0
+  isMagnetic: 0
 --- !u!1 &1436680109947005204
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,10 +160,10 @@ GameObject:
   - component: {fileID: 4682667340532260126}
   - component: {fileID: 7192409370520350928}
   - component: {fileID: 1484697423056140879}
-  - component: {fileID: 2050767471127727959}
   - component: {fileID: 4733841652192414297}
   - component: {fileID: 1763685125442154960}
   - component: {fileID: 8605369822269618406}
+  - component: {fileID: 2050767471127727959}
   m_Layer: 0
   m_Name: Bottom
   m_TagString: Metallic
@@ -176,7 +180,7 @@ Transform:
   m_GameObject: {fileID: 1436680109947005204}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0, y: -1.25, z: 0}
-  m_LocalScale: {x: 75.00002, y: 50.000046, z: 24.999994}
+  m_LocalScale: {x: 75, y: 50, z: 25}
   m_Children: []
   m_Father: {fileID: 565639063657078078}
   m_RootOrder: 0
@@ -230,22 +234,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2050767471127727959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436680109947005204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c13111a3da3254d49b4290af6d85c628, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: 1
-  charge: 0
-  isDiamagnetic: 0
-  isMagnetic: 1
 --- !u!65 &4733841652192414297
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -267,7 +255,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1436680109947005204}
   serializedVersion: 2
-  m_Mass: 0.18
+  m_Mass: 0.3
   m_Drag: 0
   m_AngularDrag: 0.01
   m_UseGravity: 1
@@ -290,6 +278,26 @@ FixedJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &2050767471127727959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436680109947005204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c13111a3da3254d49b4290af6d85c628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldQuantity: 0
+  silverQuantity: 0.3
+  copperQuantity: 0
+  emeraldQuantity: 0
+  diamondQuality: 0
+  charge: 0
+  isDiamagnetic: 0
+  isMagnetic: 1
 --- !u!1 &3567647379379957549
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,6 +307,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 565639063657078078}
+  - component: {fileID: 2053265536908731268}
   m_Layer: 0
   m_Name: Battery
   m_TagString: Untagged
@@ -315,7 +324,7 @@ Transform:
   m_GameObject: {fileID: 3567647379379957549}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_Children:
   - {fileID: 4682667340532260126}
   - {fileID: 4575027332219333200}
@@ -325,6 +334,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2053265536908731268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3567647379379957549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc762cd895d0c324ab1b887cb652e72c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3784210964652138575
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,10 +357,10 @@ GameObject:
   - component: {fileID: 4575027332219333200}
   - component: {fileID: 1550491195952635100}
   - component: {fileID: 3220881474086976036}
-  - component: {fileID: 7455232243549565367}
   - component: {fileID: 1472624042904927573}
   - component: {fileID: 7241267408660454713}
   - component: {fileID: 6287501116315968972}
+  - component: {fileID: 7455232243549565367}
   m_Layer: 0
   m_Name: Connector 1
   m_TagString: Untagged
@@ -354,13 +375,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3784210964652138575}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 0.35, y: 1.5999999, z: 0}
-  m_LocalScale: {x: 20.006268, y: 20.006268, z: 20.006268}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
   m_Father: {fileID: 565639063657078078}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
 --- !u!33 &1550491195952635100
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -410,22 +431,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7455232243549565367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3784210964652138575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c13111a3da3254d49b4290af6d85c628, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: 0
-  charge: 0
-  isDiamagnetic: 0
-  isMagnetic: 0
 --- !u!65 &1472624042904927573
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -447,7 +452,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3784210964652138575}
   serializedVersion: 2
-  m_Mass: 0.08
+  m_Mass: 0.1
   m_Drag: 0
   m_AngularDrag: 0.01
   m_UseGravity: 1
@@ -470,6 +475,26 @@ FixedJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &7455232243549565367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3784210964652138575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c13111a3da3254d49b4290af6d85c628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldQuantity: 0.15
+  silverQuantity: 0
+  copperQuantity: 0
+  emeraldQuantity: 0
+  diamondQuality: 0
+  charge: 0
+  isDiamagnetic: 0
+  isMagnetic: 0
 --- !u!1 &6206737688089078787
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,9 +506,9 @@ GameObject:
   - component: {fileID: 964653382353776309}
   - component: {fileID: 441873431350473503}
   - component: {fileID: 2475251083373577497}
-  - component: {fileID: 224612660434762663}
   - component: {fileID: 8844047622754997403}
   - component: {fileID: 6784931433459464853}
+  - component: {fileID: 224612660434762663}
   m_Layer: 0
   m_Name: Top
   m_TagString: Metallic
@@ -498,13 +523,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6206737688089078787}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
   m_LocalPosition: {x: -0, y: 1.25, z: 0}
-  m_LocalScale: {x: 75.00002, y: 50.000046, z: 24.999994}
+  m_LocalScale: {x: 75, y: 50, z: 25}
   m_Children: []
   m_Father: {fileID: 565639063657078078}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
 --- !u!33 &441873431350473503
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -554,22 +579,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &224612660434762663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6206737688089078787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c13111a3da3254d49b4290af6d85c628, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: 1
-  charge: 0
-  isDiamagnetic: 0
-  isMagnetic: 1
 --- !u!65 &8844047622754997403
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -591,7 +600,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6206737688089078787}
   serializedVersion: 2
-  m_Mass: 0.18
+  m_Mass: 0.3
   m_Drag: 0
   m_AngularDrag: 0.01
   m_UseGravity: 1
@@ -599,6 +608,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &224612660434762663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6206737688089078787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c13111a3da3254d49b4290af6d85c628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldQuantity: 0
+  silverQuantity: 0.3
+  copperQuantity: 0
+  emeraldQuantity: 0
+  diamondQuality: 0
+  charge: 0
+  isDiamagnetic: 0
+  isMagnetic: 1
 --- !u!1 &6925027935383594013
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,13 +639,12 @@ GameObject:
   - component: {fileID: 3111652734816626000}
   - component: {fileID: 3593707461287410974}
   - component: {fileID: 4381684695047243936}
-  - component: {fileID: 1881830518019948754}
   - component: {fileID: 3338050886527202010}
-  - component: {fileID: 3537839724210330633}
   - component: {fileID: 7189257526566944501}
   - component: {fileID: 5498032641422126862}
+  - component: {fileID: 1881830518019948754}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -629,13 +657,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6925027935383594013}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 75.00002, y: 50.000046, z: 100}
+  m_LocalScale: {x: 75, y: 50, z: 100}
   m_Children: []
   m_Father: {fileID: 565639063657078078}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
 --- !u!33 &3593707461287410974
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -685,22 +713,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1881830518019948754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6925027935383594013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c13111a3da3254d49b4290af6d85c628, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: 0
-  charge: 25
-  isDiamagnetic: 0
-  isMagnetic: 0
 --- !u!65 &3338050886527202010
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -714,22 +726,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.019999996, z: 0.019999996}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3537839724210330633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6925027935383594013}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f8129e863a06fe43926810d36acd39b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 0}
-  speed: 5.5
-  isConstantForce: 1
-  isVelocity: 1
 --- !u!54 &7189257526566944501
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -738,7 +734,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6925027935383594013}
   serializedVersion: 2
-  m_Mass: 0.55
+  m_Mass: 1.15
   m_Drag: 0
   m_AngularDrag: 0.01
   m_UseGravity: 1
@@ -761,3 +757,23 @@ FixedJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &1881830518019948754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6925027935383594013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c13111a3da3254d49b4290af6d85c628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldQuantity: 0
+  silverQuantity: 0
+  copperQuantity: 0
+  emeraldQuantity: 0
+  diamondQuality: 0
+  charge: 25
+  isDiamagnetic: 0
+  isMagnetic: 0

@@ -48,7 +48,7 @@ public class Rotate : MonoBehaviour
             return;
 
         ModifyRotation();
-        transform.Rotate(xSpeed * Time.deltaTime, ySpeed * Time.deltaTime, zSpeed * Time.deltaTime);
+        transform.Rotate(xSpeed * Time.smoothDeltaTime, ySpeed * Time.smoothDeltaTime, zSpeed * Time.smoothDeltaTime);
     }
 
     public void PauseRotating()

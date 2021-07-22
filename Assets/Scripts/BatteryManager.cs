@@ -5,17 +5,17 @@ using TMPro;
 
 public class BatteryManager : MonoBehaviour
 {
+    public GameObject doorHinge;
+    public GameObject doorHandle;
+
     [HideInInspector]
     private static BatteryManager instance;
 
-    private static TextMeshProUGUI text;
-
     private static float batteryStatus = 100.0f;
+    private static float consumptionRate = 0f;
 
-    public float consumptionRate = 1f;
-
-    public GameObject BatteryImage;
-    private RectTransform batteryImageRect;
+    private float meterStep = 0.9f;
+    private float meterHeight;
 
     private Color green = new Color(0.08741736f, 1.0f, 0.0f);
     private Color red = new Color(1.0f, 0.1084906f, 0.1336466f);
@@ -42,17 +42,28 @@ public class BatteryManager : MonoBehaviour
             batteryStatus = value;
             batteryStatus = batteryStatus >= 100.0f ? 100.0f : batteryStatus;
             int roundedBatteryStatus = (int)batteryStatus;
-            text.text = roundedBatteryStatus.ToString() + "%";
+            instance.UpdateBatteryStatus(value);
+        }
+    }
+
+    public static float ConsumptionRate
+    {
+        get
+        {
+            return consumptionRate;
+        }
+        set
+        {
+            consumptionRate = value;
         }
     }
 
     void Start()
     {
         instance = this;
-        text = GetComponent<TextMeshProUGUI>();
         batteryStatus = 100;
-        batteryImageRect = BatteryImage.GetComponent<RectTransform>();
         IsMagnetActive = true;
+        meterHeight = transform.localScale.z;
     }
 
     public IEnumerator UpdateBatteryStatus()
@@ -68,22 +79,29 @@ public class BatteryManager : MonoBehaviour
             }
             if(batteryStatus <= 15.0f)
             {
-                BatteryImage.GetComponent<UnityEngine.UI.Image>().color = red;
+                GetComponent<Renderer>().material.color = red;
             }
             else
             {
-                BatteryImage.GetComponent<UnityEngine.UI.Image>().color = green;
+                GetComponent<Renderer>().material.color = green;
             }
-            int roundedBatteryStatus = (int)batteryStatus;
-            text.text = roundedBatteryStatus.ToString() + "%";
-            batteryImageRect.sizeDelta = new Vector2(roundedBatteryStatus * 2, batteryImageRect.sizeDelta.y);
+
+            transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z - (meterStep *  consumptionRate));
             yield return new WaitForSeconds(0.5f);
         }
+    }
+
+    public void UpdateBatteryStatus(float charge)
+    {
+        float newCharge = transform.localScale.z + ((charge / 100) * meterHeight);
+        newCharge = newCharge < 90 ? 90 : 90;
+        transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, newCharge);
+        
     }
 
     public IEnumerator EndScene()
     {
         yield return new WaitForSeconds(3);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("EndScene", UnityEngine.SceneManagement.LoadSceneMode.Single);
+        doorHandle.GetComponent<Animator>().enabled = true;
     }
 }

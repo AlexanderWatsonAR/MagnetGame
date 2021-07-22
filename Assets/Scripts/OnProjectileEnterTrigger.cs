@@ -6,8 +6,9 @@ public class OnProjectileEnterTrigger : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        ScoreManager.Score += other.GetComponent<CollectableProperties>().score;
+        //ScoreManager.Score += other.GetComponent<CollectableProperties>().score;
         BatteryManager.BatteryStatus += other.GetComponent<CollectableProperties>().charge;
-        Destroy(other.gameObject);
+        if(other.name.Contains("Battery"))
+            Destroy(other.gameObject);
     }
 }

@@ -45,21 +45,15 @@ public class FireGun : MonoBehaviour
                     shot.GetComponent<Rigidbody>().velocity = Vector3.zero;
                     //shot.GetComponent<Rigidbody>().velocity = new Vector3(transform.forward.x * projectiles[index].speed, transform.forward.y * projectiles[index].speed, transform.forward.z * projectiles[index].speed);
                     shot.AddComponent<CollectableProperties>();
-                    shot.GetComponent<CollectableProperties>().score = projectiles[index].score;
-                    shot.GetComponent<CollectableProperties>().charge = projectiles[index].charge;
-                    shot.GetComponent<CollectableProperties>().isDiamagnetic = projectiles[index].isDiamagnetic;
-                    shot.GetComponent<CollectableProperties>().isMagnetic = projectiles[index].isMagnetic;
-                }
-                else
-                {
-                    //Transform child = shot.transform.GetChild(0);
-                    //int itr = 0;
-                    //while (child.gameObject.GetComponent<SetRigidBodyVelocity>() == null)
-                    //{
-                    //    itr++;
-                    //    child = shot.transform.GetChild(itr);
-                    //}
-                    //child.gameObject.GetComponent<SetRigidBodyVelocity>().parent = transform;
+
+                    shot.GetComponent<CollectableProperties>().goldQuantity = projectiles[index].collectableProperty.GetComponent<CollectableProperties>().goldQuantity;
+                    shot.GetComponent<CollectableProperties>().silverQuantity = projectiles[index].collectableProperty.GetComponent<CollectableProperties>().silverQuantity;
+                    shot.GetComponent<CollectableProperties>().copperQuantity = projectiles[index].collectableProperty.GetComponent<CollectableProperties>().copperQuantity;
+                    shot.GetComponent<CollectableProperties>().emeraldQuantity = projectiles[index].collectableProperty.GetComponent<CollectableProperties>().emeraldQuantity;
+                    shot.GetComponent<CollectableProperties>().diamondQuality = projectiles[index].collectableProperty.GetComponent<CollectableProperties>().diamondQuality;
+                    shot.GetComponent<CollectableProperties>().charge = projectiles[index].collectableProperty.GetComponent<CollectableProperties>().charge;
+                    shot.GetComponent<CollectableProperties>().isDiamagnetic = projectiles[index].collectableProperty.GetComponent<CollectableProperties>().isDiamagnetic;
+                    shot.GetComponent<CollectableProperties>().isMagnetic = projectiles[index].collectableProperty.GetComponent<CollectableProperties>().isMagnetic;
                 }
 
                 shot.SetActive(true);

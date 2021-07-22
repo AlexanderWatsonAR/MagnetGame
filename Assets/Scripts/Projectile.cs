@@ -11,8 +11,5 @@ public class Projectile
     public Vector3 localScale;
     public Vector3 localPosition = Vector3.zero;
     public Vector3 localRotation;
-    public int score;
-    public float charge;
-    public bool isDiamagnetic;
-    public bool isMagnetic;
+    public GameObject collectableProperty;
 }
